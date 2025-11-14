@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with animated bright water droplets */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    background: #1e90ff; /* deep blue base */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.5) 8%, transparent 8%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.4) 6%, transparent 6%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.3) 10%, transparent 10%);
+    background-size: 80px 80px, 120px 120px, 150px 150px; /* bigger droplets */
+    background-repeat: repeat;
+    animation: moveDroplets 25s linear infinite;
+}
+
+/* Droplets animation: smooth moving */
+@keyframes moveDroplets {
+    0% { background-position: 0 0, 0 0, 0 0; }
+    100% { background-position: 200px 400px, 300px 500px, 400px 600px; }
+}
+
+/* Main container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9); /* slightly transparent so water shows */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Heading */
+h1 {
+    color: #1e3c72; /* darker blue */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #1e90ff;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 10px rgba(118,75,162,0.5);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #667eea;
+    transform: translateY(-2px);
+}
+
+/* Result box */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f0f8ff;
+    border-left: 5px solid #667eea;
+    border-radius: 8px;
+}
+
+.result h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.breakdown {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.breakdown li {
+    padding: 8px 0;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.breakdown li:last-child {
+    border-bottom: none;
+}
+
+/* History box */
+.history {
+    margin-top: 30px;
+}
+
+.history h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.history-list {
+    list-style: none;
+}
+
+.history-list li {
+    padding: 10px;
+    background: #e0f0ff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #764ba2;
+    color: #1e3c72;
+    font-weight: 600;
+}
